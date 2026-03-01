@@ -1,2 +1,5 @@
-# is120-hw7-james-day
-HW7 of IS 120
+# James Day's Homework 7
+
+- Changes I made:
+- Breakpoint justifications:
+- What I would have done differently:
