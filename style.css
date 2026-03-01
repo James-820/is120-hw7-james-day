@@ -1,0 +1,132 @@
+:root {
+  --color-bg1: black;
+  --color-bg2: lightblue;
+  --color-fg1: white;
+  --color-fg2: black;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  max-width: 100vw;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr;
+  grid-template-areas:
+    "nav nav"
+    "sidebar main"
+    "foot foot";
+}
+
+.nav {
+  background-color: var(--color-bg1);
+  color: var(--color-fg1);
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  grid-area: nav;
+}
+
+.nav-link {
+  color: var(--color-fg1);
+  text-decoration: none;
+  padding: 0.25rem;
+  border: 0.1rem solid var(--color-fg1);
+  border-radius: 0.5rem;
+}
+
+.main-content {
+  background-color: var(--color-bg2);
+  color: var(--color-fg2);
+
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.sidebar {
+  background-color: var(--color-bg1);
+  color: var(--color-fg1);
+  padding: 1rem;
+
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.foot {
+  background-color: var(--color-bg1);
+  color: var(--color-fg1);
+  padding: 1rem;
+
+  grid-area: foot;
+  display: flex;
+  gap: 2rem;
+}
+
+.card {
+  max-width: 100%;
+  /* padding: 1rem; */
+  border: 0.25rem solid var(--color-fg2);
+  border-radius: 2rem;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card-img {
+  max-width: 100%;
+  width: 100%;
+
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.card-text {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .main-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .card {
+    width: 20rem;
+  }
+
+  .nav {
+    justify-content: flex-end;
+  }
+
+  .foot {
+    justify-content: flex-end;
+  }
+
+  .title {
+    justify-self: start;
+    flex-grow: 1;
+  }
+}
